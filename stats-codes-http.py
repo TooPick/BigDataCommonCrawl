@@ -10,6 +10,7 @@ with open('nom-du-fichier-index') as fi:
 data = re.findall('"status": "\d\d\d', input_data) # chercher tous les codes
 status_code_list = map(lambda x : x[11:], data) # extraire les codes sans le prefix ["status:" "] 
 status_code_list_sorted = sorted(status_code_list) # trier
+
 counts = [len(list(group)) for key, group in groupby(status_code_list_sorted)] # compter les repetitions
 total_count = sum(counts) # compter la somme totale des codes
 
