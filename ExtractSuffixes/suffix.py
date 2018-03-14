@@ -1,8 +1,10 @@
 import wget
 import gzip
+import os
 
 file = open("cc-index.paths", "r")
 
+i = 0
 for index_url in file:
 	full_index_url = "https://commoncrawl.s3.amazonaws.com/" + index_url
 	print "Downloading : " + full_index_url
@@ -10,13 +12,18 @@ for index_url in file:
 	print "End Download"
 	print "Unzip File"
 
-	index_file = gzip.GzipFile('./index_file.gz', 'rb')
-	s = index_file.read()
-	index_file.close()
-
-	outF = file("index_file1", 'wb')
-	outF.write(s)
-	outF.close()
+	os.system('gunzip index_file.gz')
 
 	print "Unzip End"
-	break
+	os.system('rm index_file.gz')
+
+	print "Begin map : " + `i`
+	os.system('cat index_file | ./map.py > out-map.txt')
+	print "End map : " + `i`
+	print "Begin Reduce : " + `i`
+	os.system('cat out-map.txt | ./reduce.py >> out-reduce.txt')
+	print "End Reduce : " + `i`
+
+	os.system('rm out-map.txt')
+	os.system('rm index_file')
+	i = i +1
