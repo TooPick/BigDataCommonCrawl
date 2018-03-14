@@ -9,7 +9,7 @@ def separate(data):
 
 # remplacer nom-du-fichier-index par le nom d'un fichier (cdx-00000, cdx-00001 etc)
 input_data = ""
-with open('index-snippet.txt') as fi:
+with open('nom-du-fichier-index') as fi:
     input_data = fi.read()
 
 # prendre tout ce qui est entre timestamp et status http, par exemple :
