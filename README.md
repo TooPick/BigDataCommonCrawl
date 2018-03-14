@@ -2,11 +2,22 @@
 
 *1. Travail sur un  seul fragment (1Go) de l'index de l'index.*
 - récupérer l'archive compressée
-- extraire des infos relatives TLD (lemonde.fr, lequipe.fr etc, pas foot.lequipe.fr) sous ce format:
-  (csv: timestamp, url_original, http_header_response, url_target)
+
+- extraire des infos relatives TLD (lemonde.fr, lequipe.fr etc, pas foot.lequipe.fr) sous ce format: (csv: timestamp, url_original, http_header_response, url_target)
+
+        extract-TLD.py
+
 - estimer le taux de répétition des TLD sur un fragment et le nombre de TLD uniques
+
+        stats-TLD.py
+
 - donner la répartition par suffix (.fr .com .net etc)
+
+        ExtractSuffixes
+
 - donner la répartition des codes http générale, puis par suffix
+
+        stats-codes-http.py
 
 *2. Travail sur différent fragments (aléatoire svp, par le 001 puis 002, 003)*
 - répeter point 1.
