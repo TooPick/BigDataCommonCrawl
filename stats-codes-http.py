@@ -1,14 +1,14 @@
-import re
 from itertools import groupby
+import csv
 
-# remplacer nom-du-fichier-index par le nom d'un fichier (cdx-00000, cdx-00001 etc)
+# remplacer nom-du-fichier par le nom d'un fichier csv en format [timestamp, url, code_http]
 
-input_data = ""
-with open('nom-du-fichier-index') as fi:
-    input_data = fi.read()
+input_data = []
+with open('nom-du-fichier.csv') as fi:
+    csv_data = csv.reader(fi)
+    input_data = list(csv_data)
 
-data = re.findall('"status": "\d\d\d', input_data) # chercher tous les codes
-status_code_list = map(lambda x : x[11:], data) # extraire les codes sans le prefix ["status:" "] 
+status_code_list = map(lambda x : x[2], input_data) # extraire les codes 
 status_code_list_sorted = sorted(status_code_list) # trier
 
 counts = [len(list(group)) for key, group in groupby(status_code_list_sorted)] # compter les repetitions
