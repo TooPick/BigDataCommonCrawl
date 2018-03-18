@@ -1,10 +1,10 @@
 from itertools import groupby
 import csv
 
-# remplacer nom-du-fichier par le nom d'un fichier csv en format [timestamp, url, code_http]
+# le fichier 'infos-TLD.csv' est genere par 'extract-TLD.py' et a le format [timestamp, url, code_http]
 
 input_data = []
-with open('nom-du-fichier.csv') as fi:
+with open('infos-TLD.csv') as fi:
     csv_data = csv.reader(fi)
     input_data = list(csv_data)
 
