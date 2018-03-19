@@ -9,4 +9,4 @@ for line in sys.stdin:
     names = keys[0].split(',')
 
     if len(names) > 1 and not names[0].isdigit():
-    	print('{0}\t{1}'.format(names[0], 1))
+    	print('{0}\t{1}'.format(names[0]+","+names[1], 1))
