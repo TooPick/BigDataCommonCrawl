@@ -15,17 +15,6 @@ with open('infos-TLD.csv', newline='') as csvfile:
 
 urls_list_sorted = sorted(input_data)
 
-"""
-for i in range(0, len(urls_list_sorted2)):
-	matab = urls_list_sorted2[i].split('.')
-	if(len(matab) == 3):
-		urls_list_sorted.append(matab[1]+'.'+matab[2])
-	else:
-		if(len(matab) == 2):
-			temp = matab[0].split('//')
-			urls_list_sorted.append(temp[1]+'.'+matab[1])
-"""
-
 counts = [len(list(group)) for key, group in groupby(urls_list_sorted)] # compter les repetitions
 total_count = sum(counts) # compter la somme totale des codes
 
