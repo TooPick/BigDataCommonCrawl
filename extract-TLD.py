@@ -18,7 +18,7 @@ with open('nom-du-fichier-index') as fi:
 
 # prendre tout ce qui est entre timestamp et status http, par exemple :
 # 20180219115239 {"url": "http://example.com/", "mime": "text/html", "mime-detected": "text/html", "status": "301"
-data = re.findall('(?:[a-z])+(?:,[a-z]+)+.+\d{14}.+status": "\d{3}', input_data) # prendre les donnees en format "timestamp
+data = re.findall('(?:[a-z])+(?:,[a-z]+)+\)/.+\d{14}.+status": "\d{3}', input_data) # prendre les donnees en format "timestamp
 data_separated = list(map(lambda x : separate(x), data)) # appliquer la fonction du haut aux donnees
 code = ''
 with open('infos-TLD.csv', 'w') as fo:
