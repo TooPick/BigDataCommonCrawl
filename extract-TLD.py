@@ -31,5 +31,5 @@ with open('infos-TLD.csv', 'w') as fo:
             else:
                 if(int(data_separated[i][2]) >= 400):
                     code = 'Erreur'
-        fo.write("{}, {}, {}\n".format(data_separated[i][0], data_separated[i][1], code))
+        fo.write("{},{},{}\n".format(data_separated[i][0], data_separated[i][1], code))
     fo.close()

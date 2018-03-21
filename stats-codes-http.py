@@ -25,5 +25,5 @@ with open('codes_stats.csv', 'w') as fo:
     for i in range(0, len(counts)):
         percentages.append(round(counts[i] / total_count * 100, 2)) # compter les pourcentages de chaque code
         print("{} : {} ({}%)".format(status_code_set_sorted[i], counts[i], percentages[i])) # imprimer
-        fo.write("{}, {}, {}%\n".format(status_code_set_sorted[i], counts[i], percentages[i])) # ecrire dans le fichier
+        fo.write("{},{},{}%\n".format(status_code_set_sorted[i], counts[i], percentages[i])) # ecrire dans le fichier
     fo.close()

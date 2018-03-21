@@ -32,5 +32,5 @@ with open('TLD_stats.csv', 'w') as fo:
     fo.write("Pourcentage, Nombre absolu, URL \n")
     for i in range(0, len(counts)):
         percentages.append(counts[i] / total_count * 100) # compter les pourcentages de chaque code
-        fo.write("{}%, {}, {}\n".format(percentages[i], counts[i], urls_list_set_sorted[i])) # ecrire dans le fichier
+        fo.write("{}%,{},{}\n".format(percentages[i], counts[i], urls_list_set_sorted[i])) # ecrire dans le fichier
     fo.close()

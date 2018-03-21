@@ -22,6 +22,9 @@
 *2. Travail sur différent fragments (aléatoire svp, par le 001 puis 002, 003)*
 - répeter point 1.
 - estimer le taux de nouveaux TLD ajouté par chaque fragment, par rapport à l'ensemble des TLD déjà récupérées.
+
+        stats-added-TLD.py
+
 - à partir de combien de fragments est-on raisonnablement serein de couvrir à peu pres l'ensemble des TLD accédés sur le mois ?
 - quelle homogénéité de la répartition des suffixes ?
 
