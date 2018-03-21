@@ -19,9 +19,11 @@ status_code_set_list = list(status_code_set) # convertir set en list pour pouvoi
 status_code_set_sorted = sorted(status_code_set_list) # trier la liste
 
 percentages = []
-with open('codes_stats.txt', 'w') as fo:
+with open('codes_stats.csv', 'w') as fo:
+    print("Code HTTP : Nombre absolu (Pourcentage)")
+    fo.write("Code HTTP, Nombre absolu, Pourcentage \n")
     for i in range(0, len(counts)):
         percentages.append(round(counts[i] / total_count * 100, 2)) # compter les pourcentages de chaque code
         print("{} : {} ({}%)".format(status_code_set_sorted[i], counts[i], percentages[i])) # imprimer
-        fo.write("{} : {} ({}%)\n".format(status_code_set_sorted[i], counts[i], percentages[i])) # ecrire dans le fichier
+        fo.write("{}, {}, {}%\n".format(status_code_set_sorted[i], counts[i], percentages[i])) # ecrire dans le fichier
     fo.close()
