@@ -6,3 +6,6 @@ Pour utiliser le reduce sur un fichier "out-map.txt" :
 
 Pour exécuter le programme "Suffix" qui récupère les indexs et analyse leurs suffixes:
 	python ./suffix.py
+
+Pour utiliser le programme "stats" qui calcule les poucentages sur un fichier "in.txt":
+	cat in.txt | ./stats.py > out-stats.txt
