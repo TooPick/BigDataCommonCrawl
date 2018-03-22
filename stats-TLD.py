@@ -15,17 +15,6 @@ with open('infos-TLD.csv', newline='') as csvfile:
 
 urls_list_sorted = sorted(input_data)
 
-"""
-for i in range(0, len(urls_list_sorted2)):
-	matab = urls_list_sorted2[i].split('.')
-	if(len(matab) == 3):
-		urls_list_sorted.append(matab[1]+'.'+matab[2])
-	else:
-		if(len(matab) == 2):
-			temp = matab[0].split('//')
-			urls_list_sorted.append(temp[1]+'.'+matab[1])
-"""
-
 counts = [len(list(group)) for key, group in groupby(urls_list_sorted)] # compter les repetitions
 total_count = sum(counts) # compter la somme totale des codes
 
@@ -36,12 +25,12 @@ urls_list_set_sorted = sorted(urls_list_set_list) # trier la liste
 nb_tld_unique = len(urls_list_set_list)
 
 percentages = []
-with open('TLD_stats.txt', 'w') as fo:
+with open('TLD_stats.csv', 'w') as fo:
     print ("nombre de TLD : {}".format(total_count))
     print ("TLD uniques : {}".format(nb_tld_unique))
     fo.write("TLD uniques : {} \n".format(nb_tld_unique))
-    fo.write("Pourcentage | Nombre absolu | URL \n")
-    for i in range(0, len(counts)-1):
+    fo.write("Pourcentage, Nombre absolu, URL \n")
+    for i in range(0, len(counts)):
         percentages.append(counts[i] / total_count * 100) # compter les pourcentages de chaque code
-        fo.write("{} % | {} | {}\n".format(percentages[i], counts[i], urls_list_set_sorted[i])) # ecrire dans le fichier
+        fo.write("{}%,{},{}\n".format(percentages[i], counts[i], urls_list_set_sorted[i])) # ecrire dans le fichier
     fo.close()
