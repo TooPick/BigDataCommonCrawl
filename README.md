@@ -5,11 +5,11 @@
 
 - extraire des infos relatives TLD (lemonde.fr, lequipe.fr etc, pas foot.lequipe.fr) sous ce format: (csv: timestamp, url_original, http_header_response, url_target)
 
-        extract-TLD.py
+        extract-URL.py
 
 - estimer le taux de répétition des TLD sur un fragment et le nombre de TLD uniques
 
-        stats-TLD.py
+        stats-URL.py
 
 - donner la répartition par suffix (.fr .com .net etc)
 
@@ -23,7 +23,7 @@
 - répeter point 1.
 - estimer le taux de nouveaux TLD ajouté par chaque fragment, par rapport à l'ensemble des TLD déjà récupérées.
 
-        stats-added-TLD.py
+        stats-added-URL.py
 
 - à partir de combien de fragments est-on raisonnablement serein de couvrir à peu pres l'ensemble des TLD accédés sur le mois ?
 - quelle homogénéité de la répartition des suffixes ?
