@@ -29,7 +29,7 @@ for index_url in file:
 
 print "Begin final reduce"
 os.system('cat out-reduce.txt | ./reduce.py >> out-reduce-final.txt')
-os.system('rm our-reduce.txt')
+os.system('rm out-reduce.txt')
 print "Begin map TLD"
 os.system('cat out-reduce-final.txt | ./map-tld.py > out-map-tld.txt')
 print "Begin reduce TLD"

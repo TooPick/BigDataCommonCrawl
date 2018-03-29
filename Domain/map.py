@@ -10,4 +10,4 @@ for line in sys.stdin:
 
     if len(names) > 1 and not names[0].isdigit():
 	if(names[0] == "fr"):
-    		print('{0}\t{1}'.format(names[0]+","+names[1], 1))
+    		print('{0}\t{1}'.format(names[1]+"."+names[0], 1))
